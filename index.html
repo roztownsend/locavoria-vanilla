@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Locavoria</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <link rel="stylesheet" href="/styles/normalize.css">
+    <link rel="stylesheet" href="/styles/style.css">
+</head>
+<body>
+    <header>
+            <div class="top">
+                <i class="burger fas fa-bars"></i>
+            <a href="#"><h1>Locavoria</h1></a>
+        </div>
+        <nav>
+                <ul class="menu-list">
+                    <li>
+                        <a href="#">Our Mission</a>
+                    </li>
+                    <li>
+                        <a href="#">Your Privacy</a>
+                    </li>
+                    <li>
+                        <a href="#">Global Efforts</a>
+                    </li>
+                    <li>
+                        <a href="#">Donate</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+    <main>
+        <div class="pitch">
+            <p class="pitch__display">Locavoria</p>
+            <p class="pitch__copy">Whether you’re vegetarian, vegan, full-on carnivore or something in between, Locavoria connects you with the best local ingredient recommendations for your dinner table without judgement. We use a unique combination of location, dietary preferences and the latest data on current farming certifications in your region to help you be a more responsible foodie.</p>
+            <p class="pitch__copy">Our project is new and growing all the time, so having your unique preferences on-file and knowing about your part of the world is of great value to us. Please consider joining us for our open-source, free project today.</p>
+        </div>
+        <button data-toggle="modal">Sign Up</button>
+        <div class="modal" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-form">
+                    <i class="fas fa-times" data-close aria-label="close"></i>
+                   <span class="modal-form__h2">Locavoria Sign-Up</span>
+                <div class="modal-body">
+                    <form>
+                        <label for="firstname">
+                            First Name<br />
+                            <input type="text" name="firstname" id="firstname" required>
+                        </label>
+                        <label for="secondname">
+                            Last/Additional Names<br />
+                            <input type="text" name="secondname" id="secondname" required>
+                        </label>
+                        <label for="email">
+                            Email Address<br />
+                            <input type="email" name="email" id="email" required>
+                        </label>
+                        <label for="location">
+                            Your Location<br />
+                            <small>(Please provide us with as much info as you're comfortable with here. We will never ask you to turn on your location!)</small><br />
+                            <input type="location" name="location" id="location" required>
+                        </label>
+                        <label for="dietary">
+                            Your Dietary Preferences<br />
+                            <small>Here is where you can include any dietary restrictions and preferences in farming methods.</small>
+                            <textarea type="text" name="dietary" id="dietary" required>
+                            </textarea>
+                        </label>
+                        <button type="submit">Submit</button>
+                    </form>
+                </div>
+            </div>
+            </div>
+        </div>
+
+    </main>
+    <script src="/vanilla.js"></script>
+</body>
+</html>

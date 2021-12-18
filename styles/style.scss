@@ -1,0 +1,255 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&family=Open+Sans:wght@400;800&display=swap');
+
+$darkgreen: #002627;
+$darkgreen50: #00262780;
+$darkgreen90: #002627E6;
+$logocolor: #BAFFCB;
+$genfont: #D4FFDE;
+$highlighter: #98FFB1;
+$highlighter2: #008552;
+
+@mixin boxoutline {
+    border: 3px solid $darkgreen;
+}
+
+@mixin buttonfont {
+    font-family: "Comfortaa", sans-serif;
+    padding: 1rem;
+    color: $darkgreen;
+}
+
+html {
+    box-sizing: border-box;
+    margin: auto;
+    padding: 0;
+}
+
+a, li a, a:visited {
+    text-decoration: none;
+    color: $genfont;
+    font-family: "Open Sans", sans-serif;
+    transition: color .5s;
+}
+
+a:active, a:hover {
+    color: $highlighter;
+}
+
+a:focus {
+    border: 1px solid $highlighter;
+}
+
+h1, .pitch__display {
+    font-family: "Comfortaa", sans-serif; 
+    color: $logocolor;
+}
+
+body {
+    height: 100vh;
+    background-image: url(/cabbage.jpg);
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+
+    > .top {
+    background-color: $darkgreen;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    padding: .5rem 1rem;
+    }
+}
+
+.burger {
+    color: $genfont;
+    font-size: 2rem;
+    cursor: pointer;
+    transition: color .5s;
+    &:active, &:hover, &:focus {
+        color: $highlighter2;
+    }
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transform: translateX(-100%);
+    transition: .5s;
+    position: fixed;
+    z-index: 1;
+}
+
+.menu-list {
+    list-style-type: none;
+    margin-top: 1rem;
+    padding: 2rem;
+    background-color: $darkgreen90;
+    height: 35vh;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    margin-top: -1rem;
+
+    > li {
+        flex-grow: 1;
+        padding: 1rem;
+    }
+}
+
+.show-nav {
+    transform: translateY(0%);
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    max-width: 70%;
+    padding-bottom: 1rem;
+    padding-top: 2rem;
+    text-align: center;
+
+    .pitch {
+        background-color: $darkgreen90;
+        padding: 1rem;
+
+        > .pitch__display {
+            font-size: 3rem;
+            line-height: 0;
+        }
+
+        > .pitch__copy {
+            font-family: "Open Sans", sans-serif;
+            color: $genfont;
+            line-height: 1.5rem;}
+    }
+
+    > button {
+        @include boxoutline;
+        @include buttonfont;
+        background-color: $logocolor;
+        font-size: 2rem;
+        width: 50%;
+        margin: auto;
+        margin-top: 1rem;
+        transition: background-color .5s;
+
+        &:active, &:hover, &:focus {
+            background-color: $highlighter2;
+        }
+    }
+}
+
+@media screen and (max-width: 600px) {
+    main {max-width: 85%;
+    
+    > button {
+            width: 80%;
+        }
+    }
+
+    .pitch {
+        width: 90%;
+        margin-top: 2rem;
+    }    
+    .pitch__display {
+        font-size: 1rem;
+    }
+
+}
+
+//Sign-up Modal:
+
+.modal {
+    background-color: $darkgreen50;
+    outline: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    display: none;
+}
+
+.modal-form {
+    position: relative;
+    background-color: $logocolor;
+    width: 50%;
+    margin: auto;
+    padding: 2rem;
+
+    > .modal-form__h2 {
+        color: $darkgreen;
+        font-family: "Comfortaa", sans-serif;
+        font-size: 2rem;
+    }
+
+    > .fa-times {
+        display: block;
+        float: right;
+        margin-top: -1rem;
+        font-size: 2rem;
+        color: $darkgreen;
+        cursor: pointer;
+
+        &:active, &:hover, &:focus {
+            color: $highlighter2;
+        }
+    }
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    font-family: "Open Sans", sans-serif;
+    text-align: left;
+    font-size: 1.2rem;
+
+    .small {
+        font-size: 1rem;
+    }
+
+    > label > input, textarea {
+        @include boxoutline;
+        margin: .5rem .5rem 1rem 0rem;
+        background-color: $genfont;
+        box-shadow: 0;
+        width: 90%;
+        padding: .5rem;
+
+        &:focus {
+            outline: 3px solid $highlighter2;
+        }
+    }
+
+    > button {
+        @include boxoutline;
+        @include buttonfont;
+        width: 50%;
+        margin: auto;
+        background-color: $genfont;
+        font-size: 1.5rem;
+        transition: background-color .5s;
+
+        &:hover, &:focus, &:active {
+            background-color: $highlighter2;
+        }
+    }
+}
+
+.show-modal.modal {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
