@@ -195,9 +195,8 @@ main {
     }
 
     > .fa-times {
+        text-align: right;
         display: block;
-        float: right;
-        margin-top: -1rem;
         font-size: 2rem;
         color: $darkgreen;
         cursor: pointer;
@@ -244,6 +243,40 @@ form {
 
         &:hover, &:focus, &:active {
             background-color: $highlighter2;
+        }
+    }
+}
+
+@media screen and (max-width: 600px) {
+
+    .modal-form {
+        margin-top: 1rem;
+        width: 100%;
+        height: 100vh;
+        overflow: scroll;
+        padding: 1rem .5rem 1rem .2rem;
+        
+        > .modal-form__h2 {
+            font-size: 1.5rem;
+        }
+
+        > .fa-times {
+            margin-right: 1rem;
+        }
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        padding: .5rem;
+        padding-right: 1rem;
+        padding-bottom: 1rem;
+        font-family: "Open Sans", sans-serif;
+        text-align: left;
+        font-size: 1.2rem;
+
+        .small {
+            font-size: 1rem;
         }
     }
 }
